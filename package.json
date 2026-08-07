@@ -4,10 +4,12 @@
     "main": "dist/index.cjs",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
-      "build": "tsup",
-      "dev": "tsup --watch"
+        "build": "tsup",
+        "dev": "tsup --watch"
     },
     "keywords": [],
     "author": "",
@@ -19,6 +21,7 @@
     },
     "devDependencies": {
         "@testing-library/react": "^16.3.2",
+        "@types/react": "^19.2.18",
         "tsup": "^8.5.1",
         "typescript": "^7.0.2",
         "vitest": "^4.1.10"
