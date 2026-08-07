@@ -10,7 +10,18 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "outDir": "dist",
-        "rootDir": "./src"
+        "rootDir": "./src",
+        "paths": {
+            "@/tokens/*": [
+                "./src/tokens/*"
+            ],
+            "@/utils/*": [
+                "./src/utils/*"
+            ],
+            "@/compenents/*": [
+                "./src/compenents/*"
+            ], 
+        },
     },
     "include": ["src/**/*"],
     "exclude": ["**/*.test.tsx", "**/*.test.ts"]
