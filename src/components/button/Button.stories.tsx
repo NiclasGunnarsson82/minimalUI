@@ -121,6 +121,7 @@ export const Hierarchy: Story = {
     render: () => (
         <div
             style={{
+                width: "252px",
                 display: "flex",
                 gap: "12px",
                 alignItems: "flex-start",
@@ -132,23 +133,56 @@ export const Hierarchy: Story = {
                     gap: "12px",
                     alignItems: "center",
                 }}>
-                <Button
-                    label="Submit"
-                    style="primary"
-                    state="enabled"
-                    minWidth={120}/>
 
-                <Button
-                    label="Cancel"
-                    style="secondary"
-                    state="enabled"
-                    minWidth={120}/>
+                <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column"
+                }}>
+                    <p style={{margin: "0px"}}>Primary</p>
+                    <p style={{margin: "0px"}}>↓</p>
+                    <Button
+                        label="Submit"
+                        style="primary"
+                        state="enabled"
+                        minWidth={120}/>     
+                </div>
+                
+                <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column"
+                }}>
+                    <p style={{margin: "0px"}}>Secondary</p>
+                    <p style={{margin: "0px"}}>↓</p>
+                    <Button
+                        label="Cancel"
+                        style="secondary"
+                        state="enabled"
+                        minWidth={120}/>    
+                </div>  
             </div>
-    
-            <Button
-                label="Reset form"
-                style="tertiary"
-                state="enabled"/>
+            <div style={{
+                width: "252px",
+                display: "flex",
+                alignItems: "flex-end",
+                flexDirection: "column"}}>
+                <div
+                    style={{
+                        width: "120px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexDirection: "column"}}>
+                        <Button
+                            label="Reset form"
+                            style="tertiary"
+                            state="enabled"/>
+                        <p style={{margin: "0px"}}>↑</p>
+                        <p style={{margin: "0px"}}>Tertiary</p>
+                </div>
+            </div>
+           
         </div>
     ),
 }
