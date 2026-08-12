@@ -40,17 +40,6 @@ const meta = {
                 }
             }
         },
-        eventHandler: {
-            description: 'The HTMLButtonElement onClick attribute value.',
-            table: {
-                type: {
-                    summary:'(event: MouseEvent<HTMLButtonElement>) => void',
-                },
-                defaultValue: {
-                    summary: 'undefined',
-                }
-            }
-        },
         type: {
             description: 'The HTMLButtonElement type attribute value.',
             table: {
