@@ -1,0 +1,168 @@
+import { Meta, Primary, Controls, Story, Source, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+ 
+import * as ButtonStories from './Button.stories';
+ 
+<Meta of={ButtonStories} />
+ 
+# Button
+ 
+Buttons are elements that signify and execute actions in the user-interface. They can be used in places like:
+
+- Forms
+- Dialogs and modals
+- Page headers and sections
+- Cards and lists
+
+
+
+
+
+## Implement a Button
+
+#### Import component
+<Source
+  language="tsx"
+  code={
+    `import { Button } from './Button'`}
+/>
+
+#### Basic configuration
+<Source
+  language="tsx"
+  code={
+    `
+    <Button 
+      label="Save" 
+      style="primary"
+      state="enabled"/>`}
+/>
+
+#### Visual representation
+<Canvas 
+  of={ButtonStories.Enabled}
+  sourceState="none" 
+/>
+
+
+
+
+
+## Required properties
+
+### label
+
+The button text.
+
+
+
+### style
+
+Provides visual hierarchy, helping users understand the importance and relationship between actions. 
+
+- **primary**: use for main goals or actions.
+
+- **secondary**: use for alternative or supporting actions.
+
+- **tertiary**: use for low emphasis actions.
+
+#### Visual representation
+
+<Canvas 
+  of={ButtonStories.Hierarchy} 
+  sourceState="none"/>
+
+
+
+### state
+
+Defines the current interaction state and provides the user visual interaction feedback. Available states depend on the selected style.
+
+- **enabled**: available for primary, secondary, and tertiary.
+- **loading**: available for primary only.
+- **success**: available for primary only.
+- **error**: available for primary only.
+- **disabled**: available for primary, secondary, and tertiary.
+
+#### Visual representation
+
+<Canvas 
+  of={ButtonStories.States} 
+  sourceState="none"
+/>
+
+
+
+
+
+## Optional properties
+
+### ref
+Passes a ref to the component for direct reference to the HTMLButtonElement.
+
+<Source
+  language="tsx"
+  code={
+    `
+    const buttonRef = React.useRef<HTMLButtonElement>(null)
+
+    <Button 
+      label="Save" 
+      style="primary"
+      state="enabled"
+      ref={buttonRef}/>`}
+/>
+
+
+
+
+### width
+
+Customises the width of the HTMLButtonElement.
+
+- **Accepts any valid CSS string value.**
+
+
+
+
+### stateLabels
+
+Customises the HTMLButtonElement button text for success, error and loading states. Available states depend on the selected style:
+
+- **loading:** available for primary only. 
+
+- **success:** available for primary only.
+
+- **error:** available for primary only.
+
+#### Configuration
+<Source
+  language="tsx"
+  code={
+    `    
+    <Button
+      label="Save"
+      state="enabled"
+      style="primary"
+      stateLabels={
+          loading: "Saving",
+          success: "Saved",
+          error: "Server error"
+      }
+      />
+    `}
+/>
+
+#### Visual representation
+<Canvas 
+  of={ButtonStories.StateLabels}
+  sourceState="none"
+/>
+
+
+
+
+## API Reference
+
+<ArgTypes of={ButtonStories} />
+
+
