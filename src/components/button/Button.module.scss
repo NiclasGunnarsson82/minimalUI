@@ -29,10 +29,12 @@
     padding:0px 30px;
     color: white;
 
-    &:hover:not(:disabled) {
-        background-color: var(--colour-hover);
-        border-color: var(--colour-hover);
-        box-shadow: var(--shadow-hover);
+    @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:disabled) {
+            background-color: var(--colour-hover);
+            border-color: var(--colour-hover);
+            box-shadow: var(--shadow-hover);
+        }
     }
 
     &:focus-visible:not(:disabled) {
@@ -91,8 +93,10 @@
     box-shadow: none;
     padding: 0 15px;
 
-    &:hover:not(:disabled) {
-        box-shadow: inset 0 0 0 2px var(--colour-secondary);
+    @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:disabled) {
+            box-shadow: inset 0 0 0 2px var(--colour-secondary);
+        }
     }
 
     &:focus-visible {
@@ -120,8 +124,10 @@
     color: var(--colour-active);
     padding: 0px 10px;
 
-    &:hover:not(:disabled) {
-        font-weight: bold;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:disabled) {
+            font-weight: bold;
+        }
     }
 
     &:focus-visible {
