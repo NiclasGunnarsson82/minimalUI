@@ -29,39 +29,6 @@ const meta = {
                 }
             }
         },
-        ref: {
-            description: 'Provides direct reference to the HTMLButtonElement.',
-            table: {
-                type: {
-                    summary: 'React.Ref<HTMLButtonElement>',
-                },
-                defaultValue: {
-                    summary: 'undefined',
-                }
-            }
-        },
-        type: {
-            description: 'The HTMLButtonElement type attribute value.',
-            table: {
-                type: {
-                    summary: '"button" | "submit" | "reset"',
-                },
-                defaultValue: {
-                    summary: '"button"',
-                }
-            }
-        },
-        width: {
-            description: 'Customises the values of the CSS width property.',
-            table: {
-                type: {
-                    summary: '"auto" | `${number}%` | `${number}px` | "initial" | "inherit"',
-                },
-                defaultValue: {
-                    summary: '"auto"',
-                }
-            }
-        },
         stateLabels: {
             description: 'Customises the button text for success, error and loading states.',
             table: {
@@ -86,7 +53,8 @@ export const Enabled: Story = {
     args: {
         label: "Save",
         style: "primary",
-        state: "enabled"
+        state: "enabled",
+        minWidth: 120
     }
 }
 
@@ -145,12 +113,14 @@ export const Hierarchy: Story = {
                 <Button
                     label="Submit"
                     style="primary"
-                    state="enabled"/>
+                    state="enabled"
+                    minWidth={120}/>
 
                 <Button
                     label="Cancel"
                     style="secondary"
-                    state="enabled"/>
+                    state="enabled"
+                    minWidth={120}/>
             </div>
     
             <Button
@@ -186,26 +156,31 @@ export const States: Story = {
                         label="Save"
                         style="primary"
                         state="enabled"
+                        minWidth={110}
                     />
                     <Button
                         label="Save"
                         style="primary"
                         state="loading"
+                        minWidth={110}
                     />
                     <Button
                         label="Save"
                         style="primary"
                         state="success"
+                        minWidth={110}
                     />
                     <Button
                         label="Save"
                         style="primary"
                         state="error"
+                        minWidth={110}
                     />
                     <Button
                         label="Save"
                         style="primary"
-                        state="disabled"/>     
+                        state="disabled"
+                        minWidth={110}/>     
             </div>
         </div>
     ),
@@ -235,16 +210,19 @@ export const StateLabels: Story = {
                         label="Save"
                         style="primary"
                         state="loading"
+                        minWidth={150}
                         stateLabels={{loading: "Saving"}}/>
                     <Button
                         label="Save"
                         style="primary"
                         state="success"
+                        minWidth={150}
                         stateLabels={{success: "Saved"}}/>
                     <Button
                         label="Save"
                         style="primary"
                         state="error"
+                        minWidth={150}
                         stateLabels={{error: "Server error"}}/>    
             </div>
         </div>
