@@ -29,6 +29,28 @@ const meta = {
                 }
             }
         },
+        minWidth: {
+            description: 'The button doesn\'t shrink below the defined width.',
+            table: {
+                type: {
+                    summary: 'number',
+                },
+                defaultValue: {
+                    summary: '0',
+                }
+            }
+        },
+        fullWidth: {
+            description: 'Makes the button span the full width of its parent container.',
+            table: {
+                type: {
+                    summary:'boolean',
+                },
+                defaultValue: {
+                    summary: 'false',
+                }
+            }
+        },
         stateLabels: {
             description: 'Customises the button text for success, error and loading states.',
             table: {
