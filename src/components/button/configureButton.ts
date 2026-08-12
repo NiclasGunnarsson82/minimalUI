@@ -3,7 +3,8 @@ import { ButtonConfigType, ConfigureButtonType } from "../types"
 export const configureButton = ({
     state,
     style,
-    width,
+    minWidth,
+    fullWidth,
     label,
     scss,
     stateLabels
@@ -18,7 +19,8 @@ export const configureButton = ({
 
     const config = {
         state: state,
-        width: width ?? "auto",
+        minWidth: minWidth ? `${minWidth}px` : "0",
+        width: fullWidth ? "100%" : "auto",
         disabled: state !== "enabled", 
     }
 

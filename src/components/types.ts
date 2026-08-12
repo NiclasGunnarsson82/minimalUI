@@ -3,7 +3,6 @@ import { ButtonHTMLAttributes } from "react"
 //BUTTON COMPONENT
 export type ButtonStateType = "enabled" | "loading" | "success" | "error" | "disabled"
 export type ButtonStyleType = "primary" | "secondary" | "tertiary" 
-export type ButtonWidthType = 'auto' | `${number}%` | `${number}px` | "initial" | "inherit";
 export type ButtonStateLabelType = {
     loading?: string 
     success?: string
@@ -14,10 +13,18 @@ type CommonButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
     "style" | "disabled" | "className"
 > & {
-  label: string
-  width?: ButtonWidthType
+  label: string,
   stateLabels?: ButtonStateLabelType
-}
+}  & (
+    | {
+        fullWidth?: false
+        minWidth?: number
+      }
+    | {
+        fullWidth: true
+        minWidth?: never
+      }
+  )
 
 type PrimaryButtonProps = CommonButtonProps & {
     style: "primary"
@@ -33,6 +40,7 @@ export type ButtonProps = PrimaryButtonProps | SecondaryButtonProps
 
 export type ButtonConfigType = {
     state: ButtonStateType,
+    minWidth: string,
     width: string,
     label: string,
     scss: string,
@@ -42,7 +50,8 @@ export type ButtonConfigType = {
 export type ConfigureButtonType = {
     state: ButtonStateType,
     style: ButtonStyleType,
-    width?: string,
+    minWidth?: number,
+    fullWidth: boolean,
     label: string,
     scss: Record<string, string>,
     stateLabels?: ButtonStateLabelType

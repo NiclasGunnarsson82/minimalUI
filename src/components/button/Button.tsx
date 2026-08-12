@@ -10,7 +10,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             label,
             style,
             state,
-            width,
+            minWidth,
+            fullWidth = false,
             type = "button",
             stateLabels,
             ...props
@@ -23,7 +24,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             const config = configureButton({
                 label,
                 scss,
-                width,
+                minWidth,
+                fullWidth,
                 state,
                 style,
                 stateLabels
@@ -31,6 +33,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
             const styles = {
                 "--width": config.width,
+                "--min-width": config.minWidth,
                 "--font-size": tokens.general.font.baseSize,
                 "--font-family": tokens.general.font.fontfamily,
                 "--font-weight": tokens.general.font.fontWeightBold,

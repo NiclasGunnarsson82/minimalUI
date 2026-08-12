@@ -8,6 +8,8 @@
     cursor: pointer;
     outline: none;
     white-space: nowrap;
+    width: var(--width);
+    min-width: var(--min-width);
 }
 
 .primary,
