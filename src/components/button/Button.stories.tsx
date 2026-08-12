@@ -72,6 +72,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Enabled: Story = {
+    tags: ["!dev"],
     args: {
         label: "Save",
         style: "primary",
@@ -81,6 +82,7 @@ export const Enabled: Story = {
 }
 
 export const Disabled: Story = {
+    tags: ["!dev"],
     args: {
         label: "Save",
         style: "primary",
@@ -89,6 +91,7 @@ export const Disabled: Story = {
 }
 
 export const Success: Story = {
+    tags: ["!dev"],
     args: {
         label: "Save",
         style: "primary",
@@ -97,6 +100,7 @@ export const Success: Story = {
 }
 
 export const Error: Story = {
+    tags: ["!dev"],
     args: {
         label: "Save",
         style: "primary",
@@ -105,6 +109,7 @@ export const Error: Story = {
 }
 
 export const Loading: Story = {
+    tags: ["!dev"],
     args: {
         label: "Save",
         style: "primary",
@@ -113,6 +118,7 @@ export const Loading: Story = {
 }
 
 export const Hierarchy: Story = {
+    tags: ["!dev"],
      args: {
         label: "",
         style: "primary",
@@ -189,7 +195,8 @@ export const Hierarchy: Story = {
 
 
 export const States: Story = {
-     args: {
+    tags: ["!dev"],
+    args: {
         label: "",
         style: "primary",
         state: "enabled",
@@ -243,7 +250,8 @@ export const States: Story = {
 }
 
 export const StateLabels: Story = {
-     args: {
+    tags: ["!dev"],
+    args: {
         label: "",
         style: "primary",
         state: "enabled",
