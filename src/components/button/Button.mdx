@@ -96,24 +96,6 @@ Defines the current interaction state and provides the user visual interaction f
 
 ## Optional properties
 
-### ref
-Passes a ref to the component for direct reference to the HTMLButtonElement.
-
-<Source
-  language="tsx"
-  code={
-    `
-    const buttonRef = React.useRef<HTMLButtonElement>(null)
-
-    <Button 
-      label="Save" 
-      style="primary"
-      state="enabled"
-      ref={buttonRef}/>`}
-/>
-
-
-
 
 ### width
 
@@ -158,6 +140,51 @@ Customises the HTMLButtonElement button text for success, error and loading stat
   sourceState="none"
 />
 
+
+## Interactions & Refs
+
+
+### onClick
+Pass an event handler to the onClick prop. Provides access to the event object.
+
+<Source
+  language="tsx"
+  code={
+    `
+    import type { MouseEvent } from "react"
+
+    const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+        event.preventDefault()
+        console.log("clicked")
+    }
+
+    <Button
+        label="Save"
+        style="primary"
+        state="enabled"
+        onClick={handleClick}
+    />`}
+/>
+
+
+### ref
+Pass a ref to the component to get a direct reference to the underlying HTMLButtonElement.
+
+<Source
+  language="tsx"
+  code={
+    `
+    import { useRef } from "react"
+
+    const buttonRef = useRef<HTMLButtonElement>(null)
+
+    <Button 
+      label="Save" 
+      style="primary"
+      state="enabled"
+      ref={buttonRef}
+    />`}
+/>
 
 
 
