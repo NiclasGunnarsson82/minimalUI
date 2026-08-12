@@ -105,31 +105,31 @@ Defines the current interaction state and provides the user visual interaction f
     </thead>
     <tbody>
         <tr>
-            <td><code>enabled</code></td>
+            <td><strong>enabled</strong></td>
             <td>✓</td>
             <td>✓</td>
             <td>✓</td>
         </tr>
         <tr>
-            <td><code>loading</code></td>
+            <td><strong>loading</strong></td>
             <td>✓</td>
             <td>—</td>
             <td>—</td>
         </tr>
         <tr>
-            <td><code>success</code></td>
+            <td><strong>success</strong></td>
             <td>✓</td>
             <td>—</td>
             <td>—</td>
         </tr>
         <tr>
-            <td><code>error</code></td>
+            <td><strong>error</strong></td>
             <td>✓</td>
             <td>—</td>
             <td>—</td>
         </tr>
         <tr>
-            <td><code>disabled</code></td>
+            <td><strong>disabled</strong></td>
             <td>✓</td>
             <td>✓</td>
             <td>✓</td>
@@ -153,9 +153,8 @@ Defines the current interaction state and provides the user visual interaction f
 
 ### minWidth
 
-Makes sure the button doesn't shrink below a certain width.
+Prevents a button from shrinking below a certain width.
 
-- **Accepts a number representing the minimum width in pixels.**
 - **Only applies when fullWidth is `false`.**
 
 
@@ -164,7 +163,7 @@ Makes sure the button doesn't shrink below a certain width.
 
 ### fullWidth
 
-Makes the button span the full width of its parent container. Defaults to `false`.
+Makes the button span the full width of its parent container.
 
 - **Accepts a boolean (`true` or `false`).**
 
@@ -173,13 +172,38 @@ Makes the button span the full width of its parent container. Defaults to `false
 
 ### stateLabels
 
-Customises the HTMLButtonElement button text for success, error and loading states. Available states depend on the selected style:
+Customises the button text for success, error and loading states. Available states depend on the selected style.
 
-- **loading:** available for primary only. 
-
-- **success:** available for primary only.
-
-- **error:** available for primary only.
+<table>
+    <thead>
+        <tr>
+            <th>stateLabel</th>
+            <th>Primary</th>
+            <th>Secondary</th>
+            <th>Tertiary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>loading</strong></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><strong>success</strong></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><strong>error</strong></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+    </tbody>
+</table>
 
 #### Configuration
 <Source
