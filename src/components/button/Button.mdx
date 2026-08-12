@@ -77,13 +77,50 @@ Provides visual hierarchy, helping users understand the importance and relations
 
 Defines the current interaction state and provides the user visual interaction feedback. Available states depend on the selected style.
 
-- **enabled**: available for primary, secondary, and tertiary.
-- **loading**: available for primary only.
-- **success**: available for primary only.
-- **error**: available for primary only.
-- **disabled**: available for primary, secondary, and tertiary.
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Primary</th>
+            <th>Secondary</th>
+            <th>Tertiary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>enabled</code></td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+        </tr>
+        <tr>
+            <td><code>loading</code></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><code>success</code></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><code>error</code></td>
+            <td>✓</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><code>disabled</code></td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+        </tr>
+    </tbody>
+</table>
 
-#### Visual representation
+#### Visual representations
 
 <Canvas 
   of={ButtonStories.States} 
