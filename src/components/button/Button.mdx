@@ -97,11 +97,22 @@ Defines the current interaction state and provides the user visual interaction f
 ## Optional properties
 
 
-### width
+### minWidth
 
-Customises the width of the HTMLButtonElement.
+Makes sure the button doesn't shrink below a certain width.
 
-- **Accepts any valid CSS string value.**
+- **Accepts a number representing the minimum width in pixels.**
+- **Only applies when fullWidth is `false`.**
+
+
+
+
+
+### fullWidth
+
+Makes the button span the full width of its parent container. Defaults to `false`.
+
+- **Accepts a boolean (`true` or `false`).**
 
 
 
@@ -139,6 +150,9 @@ Customises the HTMLButtonElement button text for success, error and loading stat
   of={ButtonStories.StateLabels}
   sourceState="none"
 />
+
+
+
 
 
 ## Interactions & Refs
