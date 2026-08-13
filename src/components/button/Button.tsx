@@ -47,8 +47,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 "--colour-error": tokens.theme.error,
                 "--colour-loader": tokens.general.misc.white,
                 "--colour-success": tokens.theme.success,
-                "--tertiary-colour-hover": tokens.theme.theme100,
-                "--tertiary-colour-active": tokens.theme.theme200,
+                "--tertiary-colour-hover": tokens.theme.theme200,
+                "--tertiary-colour-active": tokens.theme.theme100,
                 "--shadow-enabled": tokens.general.shadows.buttonEnabled,
                 "--shadow-hover": tokens.general.shadows.buttonHover
             } as CSSProperties

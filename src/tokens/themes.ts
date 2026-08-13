@@ -21,8 +21,8 @@ export const themeTokens: IThemes = {
     light: {
         foreground: "#1b1f23",
         background: "#F8F8F8",
-        theme100: "#c6c6c6",
-        theme200: "#dfdfdf",
+        theme100: "#dfdfdf",
+        theme200: "#ececec",
         error: "#950606",
         success: "#06402B",
         inputBorder: "#898989",
@@ -31,8 +31,8 @@ export const themeTokens: IThemes = {
     dark: {
         foreground: "#F8F8F8",
         background: "#1b1f23",
-        theme100: "#ececec",
-        theme200: "#dfdfdf",
+        theme100: "#262a2e",
+        theme200: "#3d4144",
         error: "#C6413A",
         success: "#147638",
         inputBorder: "#898989",

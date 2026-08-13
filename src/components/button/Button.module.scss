@@ -16,7 +16,6 @@
 .secondary {
     height: 50px;
     border-radius: var(--border-radius);
-    border: 2px solid var(--colour-enabled);
 }
 
 
@@ -27,6 +26,7 @@
 
 .primary {
     background-color: var(--colour-enabled);
+    border: 2px solid var(--colour-enabled);
     box-shadow: var(--shadow-enabled);
     padding:0px 30px;
     color: white;
@@ -91,8 +91,8 @@
 
 .secondary {
     background-color: transparent;
+    border: 2px solid var(--colour-secondary);
     color: var(--colour-secondary);
-    box-shadow: none;
     padding: 0 15px;
 
     @media (hover: hover) and (pointer: fine) {
@@ -123,7 +123,7 @@
     background-color: transparent;
     border: none;
     border-radius: var(--border-radius);
-    color: var(--colour-active);
+    color: var(--colour-secondary);
     padding: 0px 10px;
 
     @media (hover: hover) and (pointer: fine) {
