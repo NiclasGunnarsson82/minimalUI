@@ -1,0 +1,121 @@
+.checkbox {
+    height: var(--checkbox-height);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--font-family);
+    font-size: var(--input-font-size);
+}
+
+.checkbox input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    height: var(--checkbox-height);
+    width: var(--checkbox-width);
+}
+
+.checkmark,
+.checkmarkPartial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--checkbox-height);
+    width: var(--checkbox-width);
+    border: 1px solid var(--border-colour);
+    box-shadow: var(--input-shadow);
+    border-radius: var(--border-radius);
+}
+
+.checkbox input:hover ~ .checkmark,
+.checkbox input:hover ~ .checkmarkPartial {
+    border: 2px solid var(--colour-hover);
+}
+
+.checkbox input:checked ~ .checkmark,
+.checkbox input:checked ~ .checkmarkPartial {
+    background-color: var(--colour-success);
+    border-color: var(--colour-success);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.checkmarkPartial:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 10px;
+    height: 2px;
+    background: white;
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+}
+
+.checkbox input:checked ~ .checkmarkPartial:after {
+    opacity: 1;    
+}
+
+
+.checkbox input:checked:hover ~ .checkmark,
+.checkbox input:checked:hover ~ .checkmarkPartial {
+    border: 1px solid var(--colour-success)
+}
+
+.checkboxList,
+.checkboxesVertical,
+.checkboxesHorizontal {
+    display: flex;
+    align-items: flex-start;  
+    gap: 4px;
+}
+
+.checkboxList,
+.checkboxesVertical {
+    flex-direction: column;
+}
+
+.checkboxesHorizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkboxesHorizontal,
+.checkboxesVertical {
+    margin-top: 5px;
+}
+
+.errorMessage {
+    color: var(--colour-error);
+    text-align: right;
+}
