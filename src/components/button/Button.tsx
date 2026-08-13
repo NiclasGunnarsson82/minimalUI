@@ -36,7 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 "--min-width": config.minWidth,
                 "--font-size": tokens.general.font.baseSize,
                 "--font-family": tokens.general.font.fontfamily,
-                "--font-weight": tokens.general.font.fontWeightBold,
+                "--font-weight": tokens.general.font.fontWeightSemiBold,
                 "--border-radius": tokens.general.borders.buttonBorderRadius,
                 "--colour-enabled": tokens.colours.c300,
                 "--colour-hover": tokens.colours.c200,
@@ -47,6 +47,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 "--colour-error": tokens.theme.error,
                 "--colour-loader": tokens.general.misc.white,
                 "--colour-success": tokens.theme.success,
+                "--tertiary-colour-hover": tokens.theme.theme100,
+                "--tertiary-colour-active": tokens.theme.theme200,
                 "--shadow-enabled": tokens.general.shadows.buttonEnabled,
                 "--shadow-hover": tokens.general.shadows.buttonHover
             } as CSSProperties
