@@ -38,7 +38,7 @@ const meta = {
             }
         },
         minWidth: {
-            description: 'The button doesn\'t shrink below the defined width.',
+            description: 'The button doesn\'t shrink below the defined width in px.',
             table: {
                 type: {
                     summary: 'number',
