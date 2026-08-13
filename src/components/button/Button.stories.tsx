@@ -6,7 +6,7 @@ const meta = {
     component: Button,
     argTypes: {
         label: {
-            description: 'The HTMLButtonElement button text.',
+            description: 'The button text.',
             table: {
                 type: {
                     summary: 'string',
@@ -26,6 +26,14 @@ const meta = {
             table: {
                 type: {
                     summary: '"enabled" | "loading" | "success" | "error" | "disabled"',
+                }
+            }
+        },
+        type: {
+            description: 'Tells the browser what action the button performs.',
+            table: {
+                type: {
+                    summary: '"button" | "submit" | "reset"',
                 }
             }
         },
