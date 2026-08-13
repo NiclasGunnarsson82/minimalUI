@@ -20,6 +20,7 @@ export const generalTokens: IGeneralTokens = {
         fontFamily: "inherit",
         fontWeightRegular: "400",
         fontWeightBold: "700",
+        fontWeightSemiBold: "600",
     },
     form: {
         minWidth: "275px",
