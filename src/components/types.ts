@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react"
+import { ButtonHTMLAttributes, Dispatch, InputHTMLAttributes, SetStateAction } from "react"
 
 //BUTTON COMPONENT
 export type ButtonStateType = "enabled" | "loading" | "success" | "error" | "disabled"
@@ -55,4 +55,40 @@ export type ConfigureButtonType = {
     label: string,
     scss: Record<string, string>,
     stateLabels?: ButtonStateLabelType
+}
+
+//CHECKBOX COMPONENTS
+export type CheckboxStateType = "default" | "error" 
+
+export type CheckboxType = {
+    option: string,
+    value: string
+}
+export type CheckboxListType = {
+    group: string,
+    checkboxes: CheckboxType[]
+}
+
+export type CheckboxProps = {
+    state: CheckboxStateType;
+    required?: boolean;
+    checkbox: CheckboxType
+}
+
+type BaseCheckboxProps<Key extends string, Value> =
+    InputHTMLAttributes<HTMLInputElement> & {
+        state: CheckboxStateType;
+        selected: string[],
+        setSelected: Dispatch<SetStateAction<string[]>>,
+        required?: boolean,
+        align?: string
+    } & {
+        [K in Key]: Value;
+    };
+
+export type CheckboxGroupProps = BaseCheckboxProps<"checkboxes", CheckboxListType>;
+
+export type ConfigMainCheckboxType = {
+    mainIsChecked: boolean,
+    class: string
 }
