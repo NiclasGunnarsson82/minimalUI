@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { NestedCheckboxes } from "./NestedCheckboxes"
+import { NestedCheckboxList } from "./NestedCheckboxList"
 
 const meta = {
     title: "Components/Nested checkboxes",
-    component: NestedCheckboxes,
+    component: NestedCheckboxList,
  
 
-} satisfies Meta<typeof NestedCheckboxes>
+} satisfies Meta<typeof NestedCheckboxList>
 
 export default meta
 
