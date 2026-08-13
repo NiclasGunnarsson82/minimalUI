@@ -1,0 +1,97 @@
+import { CSSProperties } from "react";
+import scss from "../checkboxes/Checkbox.module.scss"
+import type { CheckboxGroupProps } from "../types";
+import { useComponentsProvider } from "@/utils/ComponentsContext";
+import { alignClass, configureCheckbox, updateAll, updateSelected } from "../checkboxes/helpers";
+
+export const NestedCheckboxList = 
+    ({  
+        state,
+        selected,
+        setSelected,
+        required,
+        align = "vertical",
+        checkboxes}: CheckboxGroupProps) => {
+
+    const { tokens } = useComponentsProvider()
+
+    const styles = {
+        "--input-padding": tokens.general.form.inputPadding,
+        "--input-shadow": tokens.general.form.inputShadow,
+        "--checkbox-height": tokens.general.form.checkboxHeight,
+        "--checkbox-width": tokens.general.form.checkboxWidth,
+        "--input-font-size": tokens.general.font.baseSize,
+        "--font-family": tokens.general.font.fontfamily,
+        "--font-weight": tokens.general.font.fontWeightRegular,
+        "--border-radius": tokens.general.form.inputBorderRadius,
+        "--colour-error": tokens.theme.error,
+        "--colour-hover": tokens.colours.c200,
+        "--border-colour": tokens.theme.inputBorder,
+        "--colour-success": tokens.theme.success
+    } as CSSProperties
+
+    const checkboxClass: string =
+        state === "default" ? scss.checkbox : scss.error
+
+    const alignment: string = alignClass(align, scss) 
+
+    const prefix: string = checkboxes.group.toLowerCase()+"-"
+    const main: string = prefix+"main"
+       
+    const parentCheckbox = configureCheckbox(
+        checkboxes.checkboxes.length,
+        selected.length,
+        scss
+    )
+      
+    return(
+        <div className={scss.checkboxList}>
+            <p>
+                {required && <strong>*</strong>}
+                {checkboxes.group}
+            </p>
+            <label 
+                className={scss.checkbox}
+                style={styles} 
+                htmlFor={main}>
+                    <input 
+                        onChange={(event) => updateAll(
+                            event, 
+                            setSelected, 
+                            checkboxes.checkboxes)}
+                        type="checkbox" 
+                        name={main}
+                        checked={parentCheckbox.mainIsChecked}/>
+                            <span className={parentCheckbox.class}></span>
+                            {parentCheckbox.mainIsChecked 
+                                ? "Deselect all"
+                                : "Select all"}
+            </label>
+            <div className={alignment} style={{marginLeft: "25px"}}>
+                {checkboxes.checkboxes.map((checkbox) => {
+                    let identifier: string = prefix+checkbox.option.toLowerCase()
+                    let isSelected: boolean = selected.includes(checkbox.value) ?? false
+                    return(
+                        <label 
+                            className={scss.checkbox}
+                            style={styles} 
+                            htmlFor={identifier}>
+                            <input
+                                onChange={(event) => 
+                                    updateSelected(
+                                        event, 
+                                        setSelected, 
+                                        selected)} 
+                                type="checkbox" 
+                                name={identifier} 
+                                checked={isSelected}
+                                value={checkbox.value}/>
+                                <span className={scss.checkmark}></span>
+                                    {checkbox.option}
+                        </label> 
+                        )
+                    })}
+            </div>  
+       </div>              
+    )
+}
