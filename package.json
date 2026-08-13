@@ -18,7 +18,7 @@
         "build-storybook": "storybook build",
         "lint": "eslint ."
     },
-    "keywords": [],
+    "keywords": ["react"],
     "author": "Niclas Gunnarsson",
     "license": "ISC",
     "description": "",
