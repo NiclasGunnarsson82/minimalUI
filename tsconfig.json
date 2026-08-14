@@ -24,7 +24,9 @@
             "@/types/*": [
                 "./src/types/*"
             ], 
-            
+            "@/data/*": [
+                "./src/data/*"
+            ],   
         },
     },
     "include": ["src/**/*"],

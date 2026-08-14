@@ -1,5 +1,6 @@
 import { Meta, Primary, Controls, Story, Source, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
- 
+import { packageName } from '@data/variables.ts';
+
 import * as ButtonStories from './Button.stories';
  
 <Meta of={ButtonStories} />
@@ -23,7 +24,7 @@ Buttons are elements that signify and execute actions in the user-interface. The
 <Source
   language="tsx"
   code={
-    `import { Button } from './Button'`}
+    `import { Button } from '${packageName}'`}
 />
 
 #### Basic configuration
