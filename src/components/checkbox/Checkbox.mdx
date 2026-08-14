@@ -1,4 +1,5 @@
 import { Source } from '@storybook/addon-docs/blocks';
+import { packageName } from '@data/variables.ts';
 
 
 # Checkbox
@@ -14,8 +15,24 @@ Checkboxes allow users to select one, none, or several options in the user-inter
 <Source
   language="tsx"
   code={
-    `import { Checkbox } from './Checkbox'`}
+    `import { Checkbox } from '${packageName}'`}
 />
+
+#### Checkbox object
+<Source
+  language="tsx"
+  code={
+    `import { Checkbox } from '{packageName}'`}
+/>
+
+#### Basic configuration
+<Source
+  language="tsx"
+  code={
+    `import { Checkbox } from '{packageName}'`}
+/>
+
+#### Visual representation
 
 ## Required properties
 

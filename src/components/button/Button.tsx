@@ -2,7 +2,7 @@ import { CSSProperties, forwardRef } from "react"
 import { useComponentsProvider } from "@/utils/ComponentsContext"
 import scss from "./Button.module.scss"
 import type { ButtonProps } from "@/types/button"
-import { configureButton } from "./configureButton"
+import { configureButton } from "@/helpers/button"
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     (

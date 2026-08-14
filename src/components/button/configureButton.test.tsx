@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { configureButton } from "./configureButton"
+import { configureButton }  from "../../helpers/button"
 
 const scss = {
     primary: "primary",
