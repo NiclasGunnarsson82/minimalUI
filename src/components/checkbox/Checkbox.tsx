@@ -31,16 +31,16 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         <label 
             className={scss.checkbox}
             style={styles} 
-            htmlFor={checkbox.option.toLowerCase()}>
+            htmlFor={checkbox.name}>
                 <input 
                     ref={ref}
                     {...props} 
                     type="checkbox" 
-                    name={checkbox.option.toLowerCase()}
+                    name={checkbox.name}
                     value={checkbox.value}/>
                     <span className={scss.checkmark}></span>
                 {required && <strong>*</strong>}
-                {checkbox.option}               
+                {checkbox.label}               
         </label>  
     )
 })
