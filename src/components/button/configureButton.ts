@@ -1,4 +1,5 @@
-import { ButtonConfigType, ConfigureButtonType } from "../types"
+import type { ButtonConfigType, ConfigureButtonType } from "@/types/button"
+
 
 export const configureButton = ({
     state,
