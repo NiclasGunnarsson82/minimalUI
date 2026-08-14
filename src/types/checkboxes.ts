@@ -3,7 +3,8 @@ import { Dispatch, InputHTMLAttributes, SetStateAction } from "react"
 export type CheckboxStateType = "default" | "error" 
 
 export type CheckboxType = {
-    option: string,
+    name: string,
+    label: string,
     value: string
 }
 export type CheckboxListType = {
@@ -18,15 +19,15 @@ export type CheckboxProps = {
 }
 
 type BaseCheckboxProps<Key extends string, Value> =
-    InputHTMLAttributes<HTMLInputElement> & {
+    Omit<InputHTMLAttributes<HTMLInputElement>, "name"> & {
         state: CheckboxStateType;
-        selected: string[],
-        setSelected: Dispatch<SetStateAction<string[]>>,
-        required?: boolean,
-        align?: string
+        selected: string[];
+        setSelected: Dispatch<SetStateAction<string[]>>;
+        required?: boolean;
+        align?: string;
     } & {
         [K in Key]: Value;
-    };
+};
 
 export type CheckboxGroupProps = BaseCheckboxProps<"checkboxes", CheckboxListType>;
 
