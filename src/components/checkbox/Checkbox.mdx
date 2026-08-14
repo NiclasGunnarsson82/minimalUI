@@ -1,6 +1,7 @@
-import { Source } from '@storybook/addon-docs/blocks';
-import { packageName } from '@data/variables.ts';
+import { Source, Canvas } from '@storybook/addon-docs/blocks';
+import { packageName, typePackageName } from '@data/variables.ts';
 
+import * as CheckboxStories from './Checkbox.stories';
 
 # Checkbox
 
@@ -22,17 +23,40 @@ Checkboxes allow users to select one, none, or several options in the user-inter
 <Source
   language="tsx"
   code={
-    `import { Checkbox } from '{packageName}'`}
+    `import { Checkbox } from '${packageName}'
+    import type { CheckboxType } from '${typePackageName}'
+
+    const checkboxItem: CheckboxType = {
+        name: "terms_conditions",
+        label: "Accept terms and conditions"
+    }
+`}
 />
 
 #### Basic configuration
 <Source
   language="tsx"
   code={
-    `import { Checkbox } from '{packageName}'`}
+    `import { Checkbox } from '${packageName}'
+    import type { CheckboxType } from '${typePackageName}'
+
+    const checkboxItem: CheckboxType = {
+        name: "terms_conditions",
+        label: "Accept terms and conditions"
+    }
+
+    <Checkbox 
+      state="default"
+      checkbox={checkboxItem}/>
+`}
 />
 
 #### Visual representation
+
+<Canvas 
+  of={CheckboxStories.Terms}
+  sourceState="none" 
+/>
 
 ## Required properties
 

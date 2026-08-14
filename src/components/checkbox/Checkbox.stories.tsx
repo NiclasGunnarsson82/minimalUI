@@ -12,4 +12,15 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
+export const Terms: Story = {
+    tags: ["!dev"],
+    args: {
+        state: "default",
+        checkbox:{
+            name: "terms_conditions", 
+            label: "Accept terms and conditions"
+        }
+    }
+}
+
 
