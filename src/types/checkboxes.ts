@@ -1,6 +1,6 @@
 import { Dispatch, InputHTMLAttributes, SetStateAction } from "react"
 
-export type CheckboxStateType = "default" | "error" 
+export type CheckboxStateType = "default" | "error" | "disabled" 
 
 export type CheckboxType = {
     name: string,

@@ -39,8 +39,8 @@
     border-radius: var(--border-radius);
 }
 
-.checkbox input:hover ~ .checkmark,
-.checkbox input:hover ~ .checkmarkPartial {
+.checkbox input:hover:not(:disabled) ~ .checkmark,
+.checkbox input:hover:not(:disabled) ~ .checkmarkPartial {
     border: 2px solid var(--colour-hover);
 }
 
@@ -48,6 +48,10 @@
 .checkbox input:checked ~ .checkmarkPartial {
     background-color: var(--colour-success);
     border-color: var(--colour-success);
+}
+
+.checkbox input:disabled {
+    border: none;
 }
 
 .checkmark:after {

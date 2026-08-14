@@ -35,7 +35,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 <input 
                     ref={ref}
                     {...props} 
-                    type="checkbox" 
+                    type="checkbox"
+                    disabled={state === "disabled"} 
                     name={checkbox.name}
                     value={checkbox.value}/>
                     <span className={scss.checkmark}></span>
