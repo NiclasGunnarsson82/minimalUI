@@ -21,6 +21,10 @@
             "@/compenents/*": [
                 "./src/compenents/*"
             ], 
+            "@/types/*": [
+                "./src/types/*"
+            ], 
+            
         },
     },
     "include": ["src/**/*"],
