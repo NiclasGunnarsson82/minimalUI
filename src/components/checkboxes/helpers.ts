@@ -1,5 +1,6 @@
+import { CheckboxType, ConfigMainCheckboxType } from "@/types/checkboxes";
 import { ChangeEvent, Dispatch, SetStateAction } from "react"
-import { CheckboxType, ConfigMainCheckboxType } from "../types";
+
 
 export const configureCheckbox = (
     numberOptions: number, 

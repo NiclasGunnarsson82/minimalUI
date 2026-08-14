@@ -1,7 +1,7 @@
 import {  CSSProperties } from "react";
 import { useComponentsProvider } from "@/utils/ComponentsContext";
 import scss from "../checkboxes/Checkbox.module.scss"
-import type { CheckboxGroupProps } from "../types";
+import type { CheckboxGroupProps } from "@/types/checkboxes";
 import { alignClass, updateSelected } from "../checkboxes/helpers";
 
 

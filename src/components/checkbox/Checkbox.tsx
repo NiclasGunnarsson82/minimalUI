@@ -1,7 +1,7 @@
 import { CSSProperties, forwardRef } from "react";
 import { useComponentsProvider } from "@/utils/ComponentsContext";
 import scss from "../checkboxes/Checkbox.module.scss"
-import type { CheckboxProps } from "../types";
+import type { CheckboxProps } from "@/types/checkboxes";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ({  
