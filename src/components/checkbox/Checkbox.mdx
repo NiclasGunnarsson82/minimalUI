@@ -1,4 +1,4 @@
-import { Source, Canvas } from '@storybook/addon-docs/blocks';
+import { Source, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import { packageName, typePackageName } from '@data/variables.ts';
 
 import * as CheckboxStories from './Checkbox.stories';
@@ -19,7 +19,7 @@ Checkboxes allow users to select one, none, or several options in the user-inter
     `import { Checkbox } from '${packageName}'`}
 />
 
-#### Checkbox object
+#### Checkbox item
 <Source
   language="tsx"
   code={
@@ -54,15 +54,66 @@ Checkboxes allow users to select one, none, or several options in the user-inter
 #### Visual representation
 
 <Canvas 
-  of={CheckboxStories.Terms}
+  of={CheckboxStories.Default}
   sourceState="none" 
 />
 
 ## Required properties
 
+### state
+
+Determines the styling and functionality of the checkbox.
+
+- **default:** the user can interact with the checkbox. 
+- **error:** the checkbox has error specific styling.
+- **disabled:** the user cannot interact with the checkbox.
+
+
+### checkbox
+
+The checkbox item object. Contains the following properties:
+
+- **name:** the value applied to the checkbox name and label htmlFor attributes. 
+- **label:** the visible text label.
+- **value(optional):** the value applied to the checkbox value attribute.
+
 ## Optional properties
 
+### required
+
+Signifies whether the checkbox is required or not.
+
+- **Accepts a boolean (`true` or `false`).**
+
+## Interactions & refs
+
+### ref
+Passes a ref to the component to get a direct reference to the underlying HTMLInputElement.
+
+<Source
+  language="tsx"
+  code={
+    `
+    import { useRef } from "react"
+    import { Checkbox } from '${packageName}'
+    import type { CheckboxType } from '${typePackageName}'
+
+    const checkboxRef = useRef<HTMLInputElement>(null)
+
+    const checkboxItem: CheckboxType = {
+        name: "terms_conditions",
+        label: "Accept terms and conditions"
+    }
+
+    <Checkbox
+      ref={checkboxRef} 
+      state="default"
+      checkbox={checkboxItem}/>`}
+/>
+
 ## API reference
+
+<ArgTypes of={CheckboxStories} />
 
 
 
