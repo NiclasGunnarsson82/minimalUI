@@ -5,7 +5,7 @@ export type CheckboxStateType = "default" | "error"
 export type CheckboxType = {
     name: string,
     label: string,
-    value: string
+    value?: string
 }
 export type CheckboxListType = {
     group: string,
