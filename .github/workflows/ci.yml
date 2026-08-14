@@ -34,3 +34,6 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+
+      - name: Test code
+        run: npm run test
