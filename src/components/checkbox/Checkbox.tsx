@@ -27,6 +27,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         "--colour-success": tokens.theme.success
     } as CSSProperties
     
+    const isDisabled: boolean = state === "disabled"
+    
     return(
         <label 
             className={scss.checkbox}
@@ -36,7 +38,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     ref={ref}
                     {...props} 
                     type="checkbox"
-                    disabled={state === "disabled"} 
+                    disabled={isDisabled}
+                    aria-disabled={isDisabled} 
                     name={checkbox.name}
                     value={checkbox.value}/>
                     <span className={scss.checkmark}></span>
