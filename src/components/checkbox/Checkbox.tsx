@@ -5,7 +5,7 @@ import type { CheckboxProps } from "@/types/checkboxes";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ({  
-        state,
+        state = "default",
         required,
         checkbox,
         ...props }, ref) => {
